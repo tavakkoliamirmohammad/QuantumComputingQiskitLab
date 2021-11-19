@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  jupyter:
+    image: jupyter/minimal-notebook:python-3.8.8
+    cap_add:
+      - SYS_PTRACE
+      - CAP_SYS_ADMIN
+    tty: true
+    volumes:
+      - .:/home/jovyan/work
+    ports:
+      - "8888:8888"
